@@ -1,0 +1,32 @@
+#+PROPERTY: header-args :session :results silent
+#+title: Dataframe export to MariaDB
+
+* Load in the dataframes (trimmed)
+  #+begin_src R
+    library("tidyverse")
+    title_akas <- read_tsv("./data/title.akas.tsv")
+    title_basics <- read_tsv("./data/title.basics.tsv")
+    title_crew <- read_tsv("./data/title.crew.tsv")
+    title_principals <- read_tsv("./data/title.principals.tsv")
+    title_ratings <- read_tsv("./data/title.ratings.tsv")
+
+  #+end_src
+* Connect to the database
+  #+begin_src R
+    library("DBI")
+    con <- dbConnect(RMariaDB::MariaDB(), dbname = "imdb_lite")
+  #+end_src
+
+* Write to imdb_lite, creating new tables for each dataframe
+  #+begin_src R
+    dbWriteTable(con, name = "Titles", value = title_akas)
+    dbWriteTable(con, name = "Basics", value = title_basics)
+    dbWriteTable(con, name = "Crew", value = title_crew)
+    dbWriteTable(con, name = "Principals", value = title_principals)
+    dbWriteTable(con, name = "Ratings", value = title_ratings)
+  #+end_src
+
+* Disconnect
+  #+begin_src R
+    dbDisconnecT(con)
+  #+end_src
