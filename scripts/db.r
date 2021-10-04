@@ -5,6 +5,7 @@ title_basics <- read_tsv("./data/title.basics.tsv")
 title_crew <- read_tsv("./data/title.crew.tsv")
 title_principals <- read_tsv("./data/title.principals.tsv")
 title_ratings <- read_tsv("./data/title.ratings.tsv")
+name_basics <- read_tsv("./data/name.basics.tsv")
 
 # Get only english movies, remove rows with duplicate titleId
 title_akas <- title_akas %>% filter(language == "en") %>% distinct(titleId, .keep_all = TRUE)
@@ -17,6 +18,13 @@ total <- list(title_basics, title_crew, title_principals, title_ratings)
 total <- lapply(total, function(df) filter(df, tconst %in% title_akas$titleId))
 names(total) <- c("t_basics", "t_crew", "t_principals", "t_ratings" )
 list2env(total, .GlobalEnv)
+
+# Separate out the csv values in knownForTitles
+name_basics <- name_basics %>% separate_rows(knownForTitles, sep = ",") %>%
+  separate_rows(primaryProfession, sep = ",")
+
+# Filter out actors based on the method above
+n_basics <- name_basics %>% filter(knownForTitles %in% title_akas$titleId)
 
 # After the above, title_akas has two extra rows, remove them
 title_akas <- title_akas %>%
@@ -34,3 +42,4 @@ write_tsv(t_basics, "title.basics.tsv")
 write_tsv(t_crew, "title.crew.tsv")
 write_tsv(t_principals, "title.principals.tsv")
 write_tsv(t_ratings, "title.ratings.tsv")
+write_tsv(n_basics, "name.basics.tsv")
