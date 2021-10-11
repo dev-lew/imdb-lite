@@ -15,7 +15,8 @@ development:
   username: <%= ENV['IMDB_LITE_USER'] %>
   password: <%= ENV['IMDB_LITE_PASS'] %>
   socket: /run/mysqld/mysqld.sock
-  
+  pool: 5
+
 
 
 # Warning: The database defined as "test" will be erased and
@@ -31,3 +32,4 @@ production:
   username: <%= ENV['IMDB_LITE_USER'] %>
   password: <%= ENV['IMDB_LITE_PASS'] %>
   socket: /run/mysqld/mysqld.sock
+  pool: 5
