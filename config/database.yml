@@ -26,5 +26,8 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  database: imdb_lite
+  username: <%= ENV['IMDB_LITE_USER'] %>
+  password: <%= ENV['IMDB_LITE_PASS'] %>
+  socket: /run/mysqld/mysqld.sock

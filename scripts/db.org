@@ -9,6 +9,7 @@
     title_crew <- read_tsv("./data/title.crew.tsv")
     title_principals <- read_tsv("./data/title.principals.tsv")
     title_ratings <- read_tsv("./data/title.ratings.tsv")
+    name_basics <- read_tsv("./data/name.basics.tsv")
 
   #+end_src
 * Connect to the database
@@ -24,6 +25,7 @@
     dbWriteTable(con, name = "Crew", value = title_crew)
     dbWriteTable(con, name = "Principals", value = title_principals)
     dbWriteTable(con, name = "Ratings", value = title_ratings)
+    dbWriteTable(con, name = "Names", value = name_basics)
   #+end_src
 
 * Disconnect
