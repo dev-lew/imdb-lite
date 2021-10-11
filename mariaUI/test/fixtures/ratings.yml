@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tconst: MyString
+  averageRating: 1.5
+  numVotes: 1.5
+
+two:
+  tconst: MyString
+  averageRating: 1.5
+  numVotes: 1.5

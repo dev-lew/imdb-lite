@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tconst:</strong>
+  <%= @rating.tconst %>
+</p>
+
+<p>
+  <strong>Averagerating:</strong>
+  <%= @rating.averageRating %>
+</p>
+
+<p>
+  <strong>Numvotes:</strong>
+  <%= @rating.numVotes %>
+</p>
+
+<%= link_to 'Edit', edit_rating_path(@rating) %> |
+<%= link_to 'Back', ratings_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nconst:</strong>
+  <%= @name.nconst %>
+</p>
+
+<p>
+  <strong>Primaryname:</strong>
+  <%= @name.primaryName %>
+</p>
+
+<p>
+  <strong>Birthyear:</strong>
+  <%= @name.birthYear %>
+</p>
+
+<p>
+  <strong>Deathyear:</strong>
+  <%= @name.deathYear %>
+</p>
+
+<p>
+  <strong>Primaryprofession:</strong>
+  <%= @name.primaryProfession %>
+</p>
+
+<p>
+  <strong>Knownfortitles:</strong>
+  <%= @name.knownForTitles %>
+</p>
+
+<%= link_to 'Edit', edit_name_path(@name) %> |
+<%= link_to 'Back', names_path %>

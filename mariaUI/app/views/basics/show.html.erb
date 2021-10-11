@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tconst:</strong>
+  <%= @basic.tconst %>
+</p>
+
+<p>
+  <strong>Primarytitle:</strong>
+  <%= @basic.primaryTitle %>
+</p>
+
+<p>
+  <strong>Startyear:</strong>
+  <%= @basic.startYear %>
+</p>
+
+<p>
+  <strong>Genres:</strong>
+  <%= @basic.genres %>
+</p>
+
+<%= link_to 'Edit', edit_basic_path(@basic) %> |
+<%= link_to 'Back', basics_path %>

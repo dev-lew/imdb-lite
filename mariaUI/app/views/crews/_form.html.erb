@@ -1,0 +1,32 @@
+<%= form_with(model: crew) do |form| %>
+  <% if crew.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(crew.errors.count, "error") %> prohibited this crew from being saved:</h2>
+
+      <ul>
+        <% crew.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tconst %>
+    <%= form.text_field :tconst %>
+  </div>
+
+  <div class="field">
+    <%= form.label :directors %>
+    <%= form.text_area :directors %>
+  </div>
+
+  <div class="field">
+    <%= form.label :writers %>
+    <%= form.text_area :writers %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

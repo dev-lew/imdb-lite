@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tconst:</strong>
+  <%= @crew.tconst %>
+</p>
+
+<p>
+  <strong>Directors:</strong>
+  <%= @crew.directors %>
+</p>
+
+<p>
+  <strong>Writers:</strong>
+  <%= @crew.writers %>
+</p>
+
+<%= link_to 'Edit', edit_crew_path(@crew) %> |
+<%= link_to 'Back', crews_path %>

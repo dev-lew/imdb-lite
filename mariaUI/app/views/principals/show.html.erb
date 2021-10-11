@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tconst:</strong>
+  <%= @principal.tconst %>
+</p>
+
+<p>
+  <strong>Nconst:</strong>
+  <%= @principal.nconst %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @principal.category %>
+</p>
+
+<p>
+  <strong>Characters:</strong>
+  <%= @principal.characters %>
+</p>
+
+<%= link_to 'Edit', edit_principal_path(@principal) %> |
+<%= link_to 'Back', principals_path %>

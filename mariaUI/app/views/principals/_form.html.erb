@@ -1,0 +1,37 @@
+<%= form_with(model: principal) do |form| %>
+  <% if principal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(principal.errors.count, "error") %> prohibited this principal from being saved:</h2>
+
+      <ul>
+        <% principal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tconst %>
+    <%= form.text_field :tconst %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nconst %>
+    <%= form.text_field :nconst %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :characters %>
+    <%= form.text_field :characters %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

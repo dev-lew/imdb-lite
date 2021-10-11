@@ -1,0 +1,37 @@
+<%= form_with(model: basic) do |form| %>
+  <% if basic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(basic.errors.count, "error") %> prohibited this basic from being saved:</h2>
+
+      <ul>
+        <% basic.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tconst %>
+    <%= form.text_field :tconst %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primaryTitle %>
+    <%= form.text_field :primaryTitle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :startYear %>
+    <%= form.text_field :startYear %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genres %>
+    <%= form.text_field :genres %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

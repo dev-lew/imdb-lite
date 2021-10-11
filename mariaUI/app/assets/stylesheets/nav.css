@@ -1,0 +1,28 @@
+.navbar .form-inline .form-control  {
+    width: 1000px;
+    margin-top: -5px;
+}
+
+.navbar .form-inline .btn {
+    margin-left: -60px;
+    margin-top: -5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: -5px;
+}
+
+#movies {
+    font-weight: bold;
+}
+
+#actors {
+    font-weight: bold;
+}
+
+.nav-link {
+    margin-top: -5px;
+    font-weight: bold;
+}
