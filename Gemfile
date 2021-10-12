@@ -21,6 +21,8 @@ gem 'mysql2'
 gem 'yaml_db'
 # autocreate models
 gem 'schema_to_scaffold'
+# add pagination
+gem 'will_paginate'
 # Generate tables
 # bootstrap
 # gem 'redis', '~> 4.0'

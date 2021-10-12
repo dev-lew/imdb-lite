@@ -18,6 +18,8 @@
                     <td><%= basic.genres %></td>
                 </tdr>
             <% end %>
+            <%= will_paginate @basics, class: 'apple_pagination' %>
         </table>
+
     </body>
 </html>
